@@ -1,0 +1,80 @@
+.teacher_responsibility {
+  padding: 50px 0;
+  @include form_check;
+  .header {
+    span {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_header_35,
+        $font_weight: $font_weight_bold,
+        $line_height: $lh_base,
+        $text_color: $text_color_primary
+      );
+      @include text_bg_gradient();
+      @include linear_gradient(
+        $deg: 45deg,
+        $first_color: $pink_color 20.69%,
+        $second_color: $purple_light_color 50.19%,
+        $third_color: $orange_color 79.69%
+      );
+    }
+
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .responsibility {
+    ul {
+      li {
+        margin-bottom: 5px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_subtitle_16,
+          $font_weight: $font_weight_normal,
+          $line_height: $lh_base,
+          $text_color: $text_color_body
+        );
+      }
+    }
+  }
+}
+
+.teacher_register {
+  &.hidden {
+    display: none;
+  }
+  padding: 50px 0;
+  @include section_header;
+  .account_is_created {
+    margin-top: 20px;
+    text-align: center;
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_subtitle_16,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_secondary
+    );
+    .link {
+      display: inline-block;
+      text-decoration: none;
+      color: $pink_color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .list_group_checkbox {
+    margin-bottom: 20px;
+  }
+  .scroll_box {
+    border: 1px solid $pink_color;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 150px;
+
+    @include scrollbar;
+  }
+}

@@ -1,0 +1,40 @@
+@mixin accordion {
+  .accordion-button {
+    &:not(.collapsed) {
+      color: $pink_color;
+      background-color: unset;
+      box-shadow: unset;
+
+      &::after {
+        background-image: unset;
+        transform: rotate(-180deg);
+      }
+    }
+
+    &::after {
+      background-image: unset;
+      width: unset;
+      height: unset;
+      background-repeat: unset;
+      background-size: unset;
+
+      font-family: "Font Awesome 5 Free";
+      content: "\f078";
+      font-weight: 900;
+      font-size: $font_size_body_14;
+      vertical-align: middle;
+      @include transition;
+    }
+
+    &:focus {
+      border-color: $pink_color;
+      box-shadow: unset;
+    }
+  }
+}
+
+.accordion-item {
+  background-color: color_opacity($grey_color, 0.1);
+  margin-bottom: 10px;
+  @include shadow($shadow: sm, $color: $black_color);
+}

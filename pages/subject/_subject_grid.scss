@@ -1,0 +1,50 @@
+.subject_grid {
+  padding: 50px 0;
+
+  @include subject_filter_sidebar;
+
+  @include feature_subject_card;
+  .subject_box {
+    .body {
+      margin-top: 8px;
+      @media (max-width: 1199.98px) {
+        margin-top: 4px;
+      }
+    }
+  }
+  @media (max-width: 1199.98px) {
+    .subject_box {
+      padding: 8px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .subject_grid_list {
+      & > div {
+        &:nth-child(n + 4) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 1199.98px) {
+    .subject_grid_list {
+      & > div {
+        &:nth-child(n + 3) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .subject_grid_list {
+      & > div {
+        &:nth-child(n + 2) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}

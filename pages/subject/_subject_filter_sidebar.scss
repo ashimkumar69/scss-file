@@ -1,0 +1,33 @@
+.offcanvas_subject_filter_sidebar {
+  .offcanvas-header {
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    .btn-close {
+      background-color: color_opacity($pink_color, 0.1);
+
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "\f00d";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        top: 50%;
+        left: 50%;
+
+        font-size: $font_size_title_20;
+        transform: translate(-50%, -50%);
+        color: $pink_color;
+      }
+    }
+
+    .image {
+      margin-top: 12px;
+    }
+  }
+
+  .offcanvas-body {
+    @include scrollbar;
+    @include subject_filter_sidebar;
+  }
+}

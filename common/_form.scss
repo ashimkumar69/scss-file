@@ -1,0 +1,9 @@
+.form {
+  @include form_label;
+  @include form_control;
+  @include form_select;
+  @include form_text;
+  @include form_check;
+  @include list_group_for_check;
+  @include button;
+}

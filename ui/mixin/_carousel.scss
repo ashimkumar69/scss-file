@@ -1,0 +1,65 @@
+@mixin carousel {
+  .carousel-item {
+    cursor: move;
+  }
+  .carousel-indicators {
+    align-items: center;
+
+    [data-bs-target] {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-left: 10px;
+      background-color: $pink_color;
+      transition: width 200ms ease-in-out, background-color 200ms ease-in-out;
+    }
+
+    .active {
+      height: 6px;
+      width: 24px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    &:hover,
+    &:focus {
+      color: $pink_color;
+    }
+  }
+
+  .carousel-control-prev-icon {
+    background-image: unset;
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f053";
+      font-weight: 900;
+      font-size: $font_size_title_20;
+      vertical-align: middle;
+    }
+  }
+  .carousel-control-next-icon {
+    background-image: unset;
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f054";
+      font-weight: 900;
+      font-size: $font_size_title_20;
+      vertical-align: middle;
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    position: relative;
+    display: inline-block;
+    width: unset;
+    height: unset;
+    background-repeat: unset;
+    background-position: unset;
+    background-size: unset;
+  }
+}

@@ -1,0 +1,45 @@
+@mixin navbar {
+  .navbar {
+    @include shadow($shadow: df, $color: $black_color);
+  }
+
+  .navbar-nav {
+    @include scrollbar;
+    .nav-item {
+      margin-right: 8px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .nav-link {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_1,
+        $text_color: $purple_color
+      );
+      border-radius: 5px;
+
+      @include transition;
+      &:hover,
+      &:focus {
+        color: $pink_color;
+      }
+      &.active {
+        color: $pink_color;
+      }
+    }
+
+    @include dropdown;
+  }
+
+  .navbar-toggler {
+    background-color: color_opacity($purple_color, 0.1);
+    color: $purple_color;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

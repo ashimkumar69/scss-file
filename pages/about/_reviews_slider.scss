@@ -1,0 +1,104 @@
+.reviews_slider {
+  padding: 50px 0;
+  @include section_header;
+  .splide {
+    .splide__list {
+      .splide__slide {
+        &.is-active {
+          background-color: color_opacity($grey_color, 0.2);
+        }
+      }
+    }
+
+    .splide__pagination {
+      bottom: -30px;
+      li {
+        margin-right: 12px;
+        &:last-child {
+          margin-right: 0px;
+        }
+        .splide__pagination__page {
+          transition: width 200ms ease-in-out,
+            background-color 200ms ease-in-out;
+          &.is-active {
+            background-color: $pink_color;
+            height: 6px;
+            width: 20px;
+
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .review_box {
+    cursor: move;
+    padding: 12px;
+    background-color: color_opacity($grey_color, 0.1);
+    text-align: center;
+    border-radius: 4px;
+    @include transition;
+    &:hover {
+      background-color: color_opacity($grey_color, 0.2);
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 8px auto;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .badge_icon {
+        @include badge_position(
+          $top: unset,
+          $right: 0,
+          $bottom: 0,
+          $left: unset,
+          $background_color: $pink_color,
+          $border: $pink_color,
+          $color: $text_color_primary_white
+        );
+      }
+    }
+    .box_body {
+      .title {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_medium,
+          $line_height: $lh_base,
+          $text_color: $text_color_secondary
+        );
+        margin-bottom: 0;
+      }
+      .subtitle {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_caption_12,
+          $font_weight: $font_weight_normal,
+          $line_height: $lh_sm,
+          $text_color: $text_color_body
+        );
+        margin-bottom: 8px;
+      }
+      .icons {
+        @include subject_chip;
+        margin-bottom: 8px;
+      }
+      .text {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_normal,
+          $line_height: $lh_base,
+          $text_color: $text_color_body
+        );
+        @include multi_line_dots(3);
+        height: 63px;
+      }
+    }
+  }
+}

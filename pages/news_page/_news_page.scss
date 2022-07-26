@@ -1,0 +1,393 @@
+.news_page {
+  padding: 50px 0;
+  .all_news {
+    & > div {
+      &:nth-child(n + 3) {
+        margin-top: 24px;
+      }
+    }
+  }
+  .news_box {
+    border: none;
+
+    .image {
+      background-color: color_opacity($grey_color, 0.2);
+    }
+    .news_body {
+      .body_header {
+        .header_date {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_caption_12,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_sm,
+            $text_color: $pink_color
+          );
+        }
+        .header_action {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_caption_12,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_sm,
+            $text_color: $text_color_third
+          );
+
+          transition: transition(300ms, ease);
+
+          &:hover {
+            color: $pink_color;
+            text-decoration: none;
+          }
+        }
+      }
+      .title {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_bold,
+          $line_height: $lh_1,
+          $text_color: $text_color_secondary
+        );
+        margin: 10px 0;
+        display: block;
+        transition: transition(300ms, ease-in-out);
+        height: 60px;
+        @include multi_line_dots(3);
+        &:hover {
+          color: $pink_color;
+        }
+      }
+      .news_action {
+        border-top: 1px solid $grey_color;
+        padding-top: 16px;
+        .action_item {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_body_14,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_1,
+            $text_color: $text_color_third
+          );
+
+          transition: transition(300ms, ease);
+          text-decoration: none;
+          &:hover {
+            color: $pink_color;
+            text-decoration: none;
+          }
+          i {
+            color: $pink_color;
+            font-size: $font_size_subtitle_16;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .search_box {
+    .form_control {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      padding: 15px 10px;
+      border: 1px solid $white_color;
+      &::placeholder {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_normal,
+          $line_height: unset,
+          $text_color: $text_color_muted
+        );
+      }
+      &:focus {
+        box-shadow: none;
+        border: 1px solid $pink_color;
+        + .btn_search {
+          background-color: $pink_color;
+          border: 1px solid $pink_color;
+          &:hover {
+            background-color: color_opacity($pink_color, 0.8);
+          }
+        }
+      }
+    }
+    .btn_search {
+      padding: 5px 20px;
+      background-color: $pink_color;
+      border: 1px solid $pink_color;
+
+      border-radius: 0px 5px 5px 0px;
+
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_1,
+        $text_color: $text_color_primary_white
+      );
+      &:hover {
+        background-color: $pink_color;
+        border: 1px solid $pink_color;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .recent_news_stories {
+    background-color: $white_color;
+    padding: 20px;
+    border-radius: 5px;
+    .header {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_title_20,
+        $font_weight: $font_weight_bold,
+        $line_height: $lh_sm,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 15px;
+    }
+    .single_recent_news {
+      margin-bottom: 12px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .image {
+        background-color: color_opacity($grey_color, 0.2);
+        border-radius: 5px;
+        @include shadow($shadow: sm, $color: $black_color);
+      }
+      .title {
+        display: block;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_subtitle_16,
+          $font_weight: $font_weight_bold,
+          $line_height: $lh_1,
+          $text_color: $text_color_secondary
+        );
+        transition: transition(300ms, ease-in-out);
+        &:hover {
+          color: $pink_color;
+        }
+      }
+      .sub_title {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_caption_12,
+          $font_weight: $font_weight_normal,
+          $line_height: $lh_1,
+          $text_color: $text_color_muted
+        );
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .news_category {
+    background-color: $white_color;
+    padding: 20px;
+    border-radius: 5px;
+    .header {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_title_20,
+        $font_weight: $font_weight_bold,
+        $line_height: $lh_sm,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 15px;
+    }
+    .list_group {
+      .list_group_item {
+        padding: 0;
+        .category_link {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_subtitle_16,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_sm,
+            $text_color: $text_color_secondary
+          );
+          padding: 10px 10px;
+
+          transition: transition(300ms, ease-in-out);
+          &:hover {
+            color: $pink_color;
+          }
+          .badge {
+            background-color: $pink_color;
+          }
+        }
+      }
+    }
+  }
+
+  .news_tag {
+    background-color: $white_color;
+    padding: 20px;
+    border-radius: 5px;
+    .header {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_title_20,
+        $font_weight: $font_weight_bold,
+        $line_height: $lh_sm,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 15px;
+    }
+    .tag_link {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_body_14,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_sm,
+        $text_color: $text_color_secondary
+      );
+      background-color: color_opacity($grey_color, 0.1);
+      transition: transition(300ms, ease-in-out);
+      text-decoration: none;
+      &:hover {
+        color: $pink_color;
+      }
+    }
+  }
+
+  // blog page
+  .news_details {
+    background-color: $white_color;
+
+    border-radius: 4px;
+
+    .image {
+      background-color: color_opacity($grey_color, 0.2);
+    }
+    .body {
+      padding: 12px;
+      .header {
+        .header_date {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_caption_12,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_sm,
+            $text_color: $pink_color
+          );
+        }
+        .header_action {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_caption_12,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_sm,
+            $text_color: $text_color_third
+          );
+
+          transition: transition(300ms, ease);
+
+          &:hover {
+            color: $pink_color;
+            text-decoration: none;
+          }
+        }
+      }
+      .title {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_bold,
+          $line_height: $lh_1,
+          $text_color: $text_color_secondary
+        );
+        margin: 10px 0 20px 0;
+      }
+      .text {
+        text-align: justify;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_normal,
+          $line_height: $lh_lg,
+          $text_color: $text_color_third
+        );
+      }
+    }
+    &_footer {
+      .tags {
+        .header {
+          display: inline-block;
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_subtitle_16,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_1,
+            $text_color: $text_color_third
+          );
+        }
+        a {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_body_14,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_1,
+            $text_color: $text_color_third
+          );
+
+          transition: transition(300ms, ease-in-out);
+          &:hover {
+            color: $pink_color;
+          }
+        }
+      }
+      .share_icons {
+        .header {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_subtitle_16,
+            $font_weight: $font_weight_normal,
+            $line_height: $lh_1,
+            $text_color: $text_color_third
+          );
+          display: inline-block;
+        }
+        a {
+          i {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+
+            color: $pink_color;
+            transition: transition(300ms, ease-in-out);
+            &:hover {
+              @include shadow($shadow: df, $color: $black_color);
+            }
+          }
+        }
+      }
+    }
+
+    .comments_form {
+      padding: 12px;
+
+      .header {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_semi_bold,
+          $line_height: $lh_1,
+          $text_color: $text_color_secondary
+        );
+      }
+    }
+    @include comments;
+    .comments_list {
+      padding: 12px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin list_group_for_check {
+  .list-group {
+    //
+  }
+
+  .list-group-item {
+    //
+    background-color: $white_color;
+    .form-check-input {
+      //
+      margin-top: 0;
+    }
+  }
+}

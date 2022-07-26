@@ -1,0 +1,24 @@
+@mixin form_control {
+  .form-control {
+    padding: 15px 15px;
+    border: 1px solid $pink_color;
+    color: $text_color_body;
+    background-color: transparent;
+    @include transition;
+    &:focus {
+      box-shadow: none;
+      border: 1px solid $pink_color;
+      background-color: $white_color;
+    }
+    margin-bottom: 20px;
+    &::placeholder {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_body_14,
+        $font_weight: $font_weight_normal,
+        $line_height: unset,
+        $text_color: $text_color_body
+      );
+    }
+  }
+}

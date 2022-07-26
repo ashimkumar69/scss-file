@@ -1,0 +1,68 @@
+.contact {
+  padding: 50px 0;
+
+  .contact_box {
+    padding: 8px;
+
+    .title {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_title_20,
+        $font_weight: $font_weight_semi_bold,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 8px;
+    }
+    .paragraph {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_body_14,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_base,
+        $text_color: $text_color_body
+      );
+      margin-bottom: 16px;
+    }
+  }
+
+  .address_box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 12px;
+
+    padding: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .icon {
+      margin-right: 16px;
+      i {
+        font-size: $font_size_header_40;
+        color: $pink_color;
+      }
+    }
+
+    .subtitle {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_semi_bold,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 0;
+    }
+    .paragraph {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_body_14,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_base,
+        $text_color: $text_color_body
+      );
+      margin-bottom: 0;
+    }
+  }
+}

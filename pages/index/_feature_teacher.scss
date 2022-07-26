@@ -1,0 +1,102 @@
+.feature_teacher {
+  padding: 50px 0;
+
+  .heading {
+    margin-bottom: 15px;
+    span {
+      @include text_property(
+        $font_family: $font_family_secondary,
+        $font_size: $font_size_header_35,
+        $font_weight: $font_weight_bold,
+        $line_height: $lh_base,
+        $text_color: $text_color_primary
+      );
+      @include text_bg_gradient();
+      @include linear_gradient(
+        $deg: 45deg,
+        $first_color: $pink_color 20.69%,
+        $second_color: $purple_light_color 50.19%,
+        $third_color: $orange_color 79.69%
+      );
+    }
+  }
+
+  .body {
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_body_14,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_body
+    );
+    margin-bottom: 30px;
+  }
+
+  .register_box {
+    text-align: center;
+    background-color: color_opacity($grey_color, 0.1);
+    border-radius: 4px;
+
+    .title {
+      padding: 75px 0;
+      display: block;
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_title_20,
+        $font_weight: $font_weight_semi_bold,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 0;
+    }
+
+    @include link_button;
+    .action {
+      padding: 20px 0;
+      border-top: 1px solid color_opacity($grey_color, 0.5);
+    }
+  }
+
+  .teacher_list {
+    background-color: color_opacity($grey_color, 0.1);
+    padding: 10px;
+  }
+
+  .figure_image {
+    @include shadow($shadow: sm, $color: $black_color);
+    padding: 30px;
+    margin-bottom: 0;
+    text-align: center;
+    cursor: grab;
+    @include transition;
+    &:hover {
+      @include shadow($shadow: df, $color: $black_color);
+    }
+    .figure_caption {
+      text-align: center;
+      .title {
+        text-decoration: none;
+        margin-bottom: 0;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_subtitle_16,
+          $font_weight: $font_weight_medium,
+          $line_height: $lh_base,
+          $text_color: $text_color_secondary
+        );
+        @include line_dots;
+      }
+      .subtitle {
+        display: block;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_light,
+          $line_height: $lh_base,
+          $text_color: $text_color_body
+        );
+        @include line_dots;
+      }
+    }
+  }
+}

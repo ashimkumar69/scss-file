@@ -1,0 +1,66 @@
+.quick_services {
+  padding: 50px 0;
+  @include feature_classes_card;
+  .box {
+    &.green {
+      background-color: $green_color;
+    }
+    &.purple {
+      background-color: $purple_light_color;
+    }
+    &.orange {
+      background-color: $orange_color;
+    }
+    .body {
+      .title {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_medium,
+          $line_height: $lh_base,
+          $text_color: $text_color_primary_white
+        );
+      }
+      .paragraph {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_normal,
+          $line_height: $lh_base,
+          $text_color: $text_color_secondary_white
+        );
+        height: 63px;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .quick_services_list {
+      & > div {
+        &:nth-child(n + 4) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1199.98px) {
+    .quick_services_list {
+      & > div {
+        &:nth-child(n + 3) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .quick_services_list {
+      & > div {
+        &:nth-child(n + 2) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}

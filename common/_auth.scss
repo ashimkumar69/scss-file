@@ -1,0 +1,67 @@
+.auth {
+  padding: 50px 0;
+  @include section_header;
+  .section_header {
+    margin-bottom: 50px;
+  }
+
+  .account_is_created {
+    margin-top: 20px;
+    text-align: center;
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_subtitle_16,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_secondary
+    );
+    .link {
+      display: inline-block;
+      text-decoration: none;
+      color: $pink_color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .login {
+    .form-check {
+      margin-bottom: 0px;
+    }
+
+    .remember_forgot {
+      margin-bottom: 20px;
+      .link {
+        display: inline-block;
+        text-decoration: none;
+        color: $pink_color;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .register {
+    .form-control {
+      &.amount {
+        margin-top: 5px;
+        padding: 12px 15px;
+        background-color: color_opacity($pink_color, 0.1);
+        border: 1px solid color_opacity($pink_color, 0.1);
+        text-align: center;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_subtitle_16,
+          $font_weight: $font_weight_medium,
+          $line_height: $lh_lg,
+          $text_color: $pink_color
+        );
+        &:focus {
+          border: 1px solid color_opacity($pink_color, 0.1);
+        }
+      }
+    }
+  }
+}

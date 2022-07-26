@@ -1,0 +1,19 @@
+.hero_banner {
+  @include carousel;
+  @media (max-width: 767.98px) {
+    .carousel-indicators {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .carousel-item {
+      height: 200px;
+      img {
+        height: 100%;
+      }
+    }
+    .carousel-indicators {
+      margin-bottom: 0;
+    }
+  }
+}

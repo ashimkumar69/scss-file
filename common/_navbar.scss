@@ -1,0 +1,13 @@
+@include navbar;
+
+.navbar {
+  background-color: $white_color;
+  &.sticky_top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    animation: navbarAnimationFrom 300ms ease-in-out;
+  }
+}

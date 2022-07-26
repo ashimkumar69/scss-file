@@ -1,0 +1,37 @@
+.footer_tab {
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white_color;
+  z-index: 1000;
+  @include shadow($shadow: df, $color: $black_color);
+  .tab_list {
+    .list_item {
+      .icon_btn_filter {
+        position: relative;
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+        @include shadow($shadow: df, $color: $black_color);
+        background-color: $pink_color;
+        border: 1px solid $pink_color;
+
+        &::before {
+          position: absolute;
+          content: "\f0b0";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          top: 50%;
+          left: 50%;
+
+          font-size: $font_size_title_20;
+          transform: translate(-50%, -50%);
+          color: $white_color;
+        }
+      }
+    }
+  }
+}

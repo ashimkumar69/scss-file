@@ -1,0 +1,73 @@
+@mixin subject_filter_sidebar {
+  .subject_filter_sidebar {
+    background-color: $white_color;
+    padding: 12px;
+    border-radius: 4px;
+
+    .heading {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_title_20,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 10px;
+      border-bottom: 1px solid $grey_color;
+    }
+    .list {
+      .list_item {
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .link {
+      padding: 12px 8px;
+      display: block;
+      text-decoration: none;
+      border-radius: 4px;
+      background-color: $white_color;
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_sm,
+        $text_color: $text_color_secondary
+      );
+      @include transition;
+      &:hover {
+        background-color: color_opacity($pink_color, 0.1);
+        color: $pink_color;
+      }
+
+      &[aria-expanded="true"] {
+        background-color: color_opacity($pink_color, 0.1);
+        color: $pink_color;
+        &.link_collapse::after {
+          transform: translateY(-50%) rotate(-90deg);
+        }
+      }
+      &.link_collapse {
+        position: relative;
+      }
+      &.link_collapse::after {
+        position: absolute;
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        @include transition;
+      }
+    }
+
+    .box {
+      border-radius: 4px;
+      padding: 8px;
+      background-color: color_opacity($grey_color, 0.2);
+    }
+  }
+}

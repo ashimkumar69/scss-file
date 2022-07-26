@@ -1,0 +1,44 @@
+@mixin subject_chip {
+  .list {
+    margin: 10px 0;
+    .list_item {
+      display: inline-block;
+      margin: 4px 0;
+    }
+  }
+  .chip {
+    display: inline-block;
+    padding: 0 16px;
+    border-radius: 50px;
+
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_body_14,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_secondary
+    );
+
+    .icon {
+      margin-right: 3px;
+      font-size: $font_size_caption_12;
+    }
+
+    &.pink {
+      color: $pink_color;
+      background-color: color_opacity($pink_color, 0.1);
+    }
+    &.purple {
+      color: $purple_color;
+      background-color: color_opacity($purple_color, 0.1);
+    }
+    &.green {
+      color: $green_color;
+      background-color: color_opacity($green_color, 0.1);
+    }
+    &.orange {
+      color: $orange_color;
+      background-color: color_opacity($orange_color, 0.1);
+    }
+  }
+}

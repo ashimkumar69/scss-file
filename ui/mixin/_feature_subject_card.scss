@@ -1,0 +1,59 @@
+@mixin feature_subject_card {
+  .subject_box {
+    padding: 12px;
+    border-radius: 4px;
+    background-color: $white_color;
+    @include transition;
+    &:hover {
+      @include shadow($shadow: df, $color: $black_color);
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      img {
+        border-radius: 4px;
+      }
+    }
+
+    .body {
+      .title {
+        margin-bottom: 0;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_medium,
+          $line_height: $lh_base,
+          $text_color: $text_color_secondary
+        );
+        @include line_dots;
+      }
+      .subtitle {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_light,
+          $line_height: $lh_base,
+          $text_color: $text_color_body
+        );
+        @include line_dots;
+        margin-bottom: 0;
+        span {
+          font-weight: $font_weight_bold;
+        }
+      }
+
+      @include subject_chip;
+    }
+
+    @include link_button;
+    .action {
+      .link {
+        padding: 4px 20px;
+      }
+    }
+  }
+}

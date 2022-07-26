@@ -1,0 +1,49 @@
+@mixin section_header {
+  .section_header {
+    text-align: center;
+    margin-bottom: 100px;
+    .sub_heading {
+      display: inline-block;
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_body
+      );
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+    .heading {
+      span {
+        @include text_property(
+          $font_family: $font_family_secondary,
+          $font_size: $font_size_header_35,
+          $font_weight: $font_weight_bold,
+          $line_height: $lh_base,
+          $text_color: $text_color_primary
+        );
+        @include text_bg_gradient();
+        @include linear_gradient(
+          $deg: 45deg,
+          $first_color: $pink_color 20.69%,
+          $second_color: $purple_light_color 50.19%,
+          $third_color: $orange_color 79.69%
+        );
+        text-transform: capitalize;
+      }
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+    .paragraph {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_base,
+        $text_color: $text_color_body
+      );
+      margin-bottom: 0;
+    }
+  }
+}

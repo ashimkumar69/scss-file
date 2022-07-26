@@ -1,0 +1,200 @@
+.subject_details {
+  padding: 50px 0;
+  .detail_side_wraper {
+    padding: 8px;
+    background-color: $white_color;
+
+    @include figure;
+    .figure {
+      margin-bottom: 8px;
+      box-shadow: unset;
+    }
+
+    .action {
+      @include button;
+      text-align: center;
+    }
+    .list {
+      .list_item {
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @include feature_classes_card;
+    .box {
+      box-shadow: unset;
+      .image {
+        border-radius: 4px;
+        box-shadow: unset;
+      }
+      .body {
+        .paragraph {
+          height: unset;
+        }
+      }
+    }
+  }
+
+  .subject_features {
+    margin-bottom: 40px;
+    .heading {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_header_30,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 20px;
+    }
+    @include subject_chip;
+  }
+
+  .subject_overview {
+    margin-bottom: 40px;
+    .heading {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_header_30,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 20px;
+    }
+    .body {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_body_14,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_base,
+        $text_color: $text_color_body
+      );
+      margin-bottom: 20px;
+    }
+    .sub_heading {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_header_24,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 30px;
+    }
+    .requirements_list {
+      ul {
+        li {
+          padding-left: 25px;
+          margin-bottom: 8px;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            top: 0;
+            left: 0;
+            color: $pink_color;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .subject_circullum {
+    margin-bottom: 40px;
+    .heading {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_header_30,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+      margin-bottom: 20px;
+    }
+    .list_heading {
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_subtitle_16,
+        $font_weight: $font_weight_medium,
+        $line_height: $lh_base,
+        $text_color: $text_color_secondary
+      );
+    }
+
+    .course_circullum_list {
+      ul {
+        li {
+          padding-left: 25px;
+          margin-bottom: 8px;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "\f192";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            top: 0;
+            left: 0;
+            color: $pink_color;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            text-decoration: none;
+            @include text_property(
+              $font_family: $font_family_Primary,
+              $font_size: $font_size_body_14,
+              $font_weight: $font_weight_normal,
+              $line_height: $lh_base,
+              $text_color: $text_color_body
+            );
+            @include transition;
+            &:hover {
+              color: $pink_color;
+            }
+            span {
+              font-weight: $font_weight_medium;
+            }
+          }
+        }
+      }
+    }
+
+    @include accordion;
+    .accordion-button {
+      &:not(.collapsed) {
+        .list_heading {
+          @include text_property(
+            $font_family: $font_family_Primary,
+            $font_size: $font_size_subtitle_16,
+            $font_weight: $font_weight_medium,
+            $line_height: $lh_base,
+            $text_color: $pink_color
+          );
+        }
+      }
+    }
+  }
+  .subject_reviews {
+    .comments_form {
+      margin: 40px 0;
+      .header {
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_title_20,
+          $font_weight: $font_weight_semi_bold,
+          $line_height: $lh_1,
+          $text_color: $text_color_secondary
+        );
+      }
+    }
+    @include comments;
+  }
+}

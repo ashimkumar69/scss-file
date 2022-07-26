@@ -1,0 +1,13 @@
+.privacy_policy {
+  padding: 50px 0;
+  .body {
+    padding: 10px;
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_body_14,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_body
+    );
+  }
+}

@@ -1,0 +1,46 @@
+.teacher_grid {
+  padding: 50px 0;
+
+  .teacher_list {
+    background-color: color_opacity($grey_color, 0.1);
+    padding: 10px;
+  }
+
+  .figure_image {
+    @include shadow($shadow: sm, $color: $black_color);
+    padding: 30px;
+    margin-bottom: 0;
+    text-align: center;
+    cursor: grab;
+    @include transition;
+    &:hover {
+      @include shadow($shadow: df, $color: $black_color);
+    }
+    .figure_caption {
+      text-align: center;
+      .title {
+        text-decoration: none;
+        margin-bottom: 0;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_subtitle_16,
+          $font_weight: $font_weight_medium,
+          $line_height: $lh_base,
+          $text_color: $text_color_secondary
+        );
+        @include line_dots;
+      }
+      .subtitle {
+        display: block;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_body_14,
+          $font_weight: $font_weight_light,
+          $line_height: $lh_base,
+          $text_color: $text_color_body
+        );
+        @include line_dots;
+      }
+    }
+  }
+}

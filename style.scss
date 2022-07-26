@@ -1,0 +1,80 @@
+// config variable
+@import "./font";
+@import "./color";
+// @import "./_variable";
+@import "./function";
+@import "./mixin";
+
+// mixin folder
+@import "./ui/mixin/navbar";
+@import "./ui/mixin/scrollbar";
+@import "./ui/mixin/dropdown";
+@import "./ui/mixin/carousel";
+@import "./ui/mixin/feature_classes_card";
+@import "./ui/mixin/section_header";
+@import "./ui/mixin/feature_subject_card";
+@import "./ui/mixin/subject_chip";
+@import "./ui/mixin/link_button";
+@import "./ui/mixin/button";
+@import "./ui/mixin/subject_filter_sidebar";
+@import "./ui/mixin/figure";
+@import "./ui/mixin/accordion";
+@import "./ui/mixin/comments";
+@import "./ui/mixin/forms/form_control";
+@import "./ui/mixin/forms/form_select";
+@import "./ui/mixin/forms/form_label";
+@import "./ui/mixin/forms/form_text";
+@import "./ui/mixin/forms/form_check";
+@import "./ui/mixin/list_group_for_check";
+
+@import "./config";
+
+// common
+@import "./common/top_header";
+@import "./common/navbar";
+@import "./common/footer";
+@import "./common/page_title";
+@import "./common/form";
+
+// index page
+@import "./pages/index/hero_banner";
+@import "./pages/index/quick_services";
+@import "./pages/index/feature_classes";
+@import "./pages/index/feature_subject";
+@import "./pages/index/about_us";
+@import "./pages/index/feature_teacher";
+
+// about page
+@import "./pages/about/reviews_slider";
+
+// subject page
+@import "./pages/subject/subject_grid";
+@import "./pages/subject/footer_tab";
+@import "./pages/subject/subject_filter_sidebar";
+@import "./pages/subject/subject_details";
+
+// teacher grid
+@import "./pages/teacher_grid/teacher_grid";
+
+// news grid
+@import "./pages/news_page/news_page";
+
+// contact page
+@import "./pages/contact/contact";
+
+// teacher register page
+@import "./pages/teacher_register/teacher_register";
+
+// privacy policy page
+@import "./pages/privacy_policy/privacy_policy";
+
+// faqs page
+@import "./pages/faqs/faqs";
+
+// auth
+@import "./common/auth";
+
+// all class
+@import "./class";
+// responsive
+// @import "./responsive";

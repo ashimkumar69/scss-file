@@ -1,0 +1,20 @@
+@mixin figure {
+  .figure {
+    margin-bottom: 0;
+    @include shadow($shadow: sm, $color: $black_color);
+  }
+
+  // .figure-img {
+  //   //
+  // }
+
+  .figure-caption {
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_title_20,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_secondary
+    );
+  }
+}

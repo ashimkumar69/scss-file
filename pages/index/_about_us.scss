@@ -1,0 +1,75 @@
+.about_us {
+  padding: 50px 0;
+
+  .video {
+    padding: 10px;
+    // @include shadow(sm);
+  }
+
+  .heading {
+    span {
+      @include text_property(
+        $font_family: $font_family_secondary,
+        $font_size: $font_size_header_35,
+        $font_weight: $font_weight_bold,
+        $line_height: $lh_base,
+        $text_color: $text_color_primary
+      );
+      @include text_bg_gradient;
+      @include linear_gradient(
+        $deg: 45deg,
+        $first_color: $pink_color 20.69%,
+        $second_color: $purple_light_color 50.19%,
+        $third_color: $orange_color 79.69%
+      );
+    }
+  }
+
+  .body {
+    @include text_property(
+      $font_family: $font_family_Primary,
+      $font_size: $font_size_body_14,
+      $font_weight: $font_weight_normal,
+      $line_height: $lh_base,
+      $text_color: $text_color_body
+    );
+  }
+
+  .list {
+    background-color: color_opacity($grey_color, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 30px 0;
+    border-radius: 4px;
+    .list_item {
+      display: inline-block;
+      padding: 20px 30px;
+      background-color: color_opacity($grey_color, 0.2);
+      text-align: center;
+      margin: 5px;
+      word-wrap: break-word;
+      flex: 1 1 auto;
+      border-radius: 4px;
+
+      @include text_property(
+        $font_family: $font_family_Primary,
+        $font_size: $font_size_body_14,
+        $font_weight: $font_weight_normal,
+        $line_height: $lh_base,
+        $text_color: $text_color_body
+      );
+      .activity {
+        display: block;
+        @include text_property(
+          $font_family: $font_family_Primary,
+          $font_size: $font_size_header_35,
+          $font_weight: $font_weight_bold,
+          $line_height: $lh_base,
+          $text_color: $pink_color
+        );
+      }
+    }
+  }
+  @include link_button;
+}

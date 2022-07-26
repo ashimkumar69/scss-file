@@ -1,0 +1,93 @@
+// text  property
+@mixin text_property(
+  $font_family: $font_family_Primary,
+  $font_size: $font_size_body_14,
+  $font_weight: $font_weight_normal,
+  $line_height: $lh_base,
+  $text_color: $text_color_body
+) {
+  font-family: $font_family;
+  font-size: $font_size;
+  font-weight: $font_weight;
+  line-height: $line_height;
+  color: $text_color;
+}
+
+// single line dots
+@mixin line_dots {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// multi line dots
+@mixin multi_line_dots($lines) {
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// shadow
+@mixin shadow($shadow: df, $color: $black_color) {
+  @if $shadow == df {
+    box-shadow: 0 0.5rem 1rem rgba($color, 0.15);
+  } @else if $shadow == sm {
+    box-shadow: 0 0.125rem 0.25rem rgba($color, 0.075);
+  } @else if $shadow == lg {
+    box-shadow: 0 1rem 3rem rgba($color, 0.175);
+  } @else {
+    @error "Unknown shadow #{$shadow}.";
+  }
+}
+
+// transition animation
+@mixin transition($time: 300ms, $motion: ease-in-out) {
+  transition: all $time $motion;
+}
+
+//linear gradient color
+
+@mixin linear_gradient(
+  $deg: 45deg,
+  $first_color: none 20.69%,
+  $second_color: none 50.19%,
+  $third_color: none 79.69%
+) {
+  background: linear-gradient($deg, $first_color, $second_color, $third_color);
+}
+
+// text background gradient
+@mixin text_bg_gradient {
+  background-clip: text;
+  -webkit-background-clip: text !important;
+  color: transparent;
+  display: inline-block;
+}
+
+// badge position
+@mixin badge_position(
+  $top: 0,
+  $right: 0,
+  $bottom: 0,
+  $left: 0,
+  $background_color: none,
+  $border: none,
+  $color: none
+) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  font-size: $font-size-caption-10;
+  background-color: $background_color;
+  border: 1px sold $border;
+  color: $color;
+}
